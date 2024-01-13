@@ -3,10 +3,10 @@ import { FaInstagram, FaTelegramPlane, FaTiktok } from 'react-icons/fa';
 import React, { useState } from 'react';
 
 export default function Component() {
-  const lowQualitySrc = '/';
-  const highQualitySrc = '/evaHQ.jpg';
+  const lowQualitySrc = '/eva_lowres.jpeg';
+  const highQualitySrc = '/evaHQ.png';
   const [imageSrc, setImageSrc] = useState(lowQualitySrc); // Start with low-res image
-  const [setImageLoadError] = useState(false);
+  const [imageLoadError, setImageLoadError] = useState(false);
 
   const handleImageError = () => {
     setImageLoadError(true);
@@ -18,7 +18,12 @@ export default function Component() {
       <div className="bg-gradient-to-r from-teal-400 via-purple-400 to-indigo-500 text-white min-h-screen w-full flex items-center justify-center">
     <div className="absolute w-full h-full max-w-md p-6 space-y-6 bg-black bg-opacity-50 md:rounded-3xl md:shadow-2xl md:max-h-[90vh] overflow-auto">
       
-       
+        {imageLoadError && (
+            <Box textAlign="center">
+                <p>Loading high-resolution image...</p>
+            </Box>
+        )}
+
      
         <div className="flex justify-center">
             <Avatar
