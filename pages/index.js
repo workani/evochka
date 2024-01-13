@@ -3,8 +3,8 @@ import { FaInstagram, FaTelegramPlane, FaTiktok } from 'react-icons/fa';
 import React, { useState } from 'react';
 
 export default function Component() {
-  const lowQualitySrc = '/eva1.jpeg';
-  const highQualitySrc = '/eva.jpeg';
+  const lowQualitySrc = '/eva_lowres.jpeg';
+  const highQualitySrc = '/evaHQ.png';
   const [imageSrc, setImageSrc] = useState(lowQualitySrc); // Start with low-res image
   const [imageLoadError, setImageLoadError] = useState(false);
 
