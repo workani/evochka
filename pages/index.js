@@ -1,4 +1,4 @@
-import { ChakraProvider, Avatar, Box } from '@chakra-ui/react';
+import { ChakraProvider, Avatar } from '@chakra-ui/react';
 import { FaInstagram, FaTelegramPlane, FaTiktok } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
 
@@ -23,8 +23,9 @@ export default function Component() {
 
   return (
     <ChakraProvider>
-      <div className="min-h-screen bg-gradient-to-r from-teal-400 via-purple-400 to-indigo-500 text-white flex flex-col items-center justify-center">
-        <div className="w-full max-w-md p-6 space-y-6 bg-black bg-opacity-50 rounded-3xl shadow-2xl">
+      <div className="bg-gradient-to-r from-teal-400 via-purple-400 to-indigo-500 text-white min-h-screen w-full flex items-center justify-center">
+
+        <div className="absolute w-full h-full max-w-md p-6 space-y-6 bg-black bg-opacity-50 md:rounded-3xl md:shadow-2xl md:max-h-[90vh] overflow-auto">
           {imageSrc && (
             <Avatar id="pfp-avatar" size="3.5xl" src={imageSrc} className="w-48 h-48 mx-auto border-4 border-white rounded-full overflow-hidden shadow-lg" alt="Profile picture of Eva" />
           )}
