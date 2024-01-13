@@ -1,39 +1,31 @@
 import { ChakraProvider, Avatar, Box } from '@chakra-ui/react';
 import { FaInstagram, FaTelegramPlane, FaTiktok } from 'react-icons/fa';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Component() {
-  const lowQualitySrc = '/eva_lowres1.jpeg';
-  const highQualitySrc = '/evaHQ.png';
-  const [imageSrc, setImageSrc] = useState(lowQualitySrc); // Start with low-res image
-  const [imageLoadError, setImageLoadError] = useState(false);
+  const highQualitySrc = '/evaHQ.jpg';
 
-  const handleImageError = () => {
-    setImageLoadError(true);
-    setImageSrc(highQualitySrc); // Fallback to high-res image on error
+  // Inline styles for the Avatar to ensure that images are scaled correctly
+  const avatarStyle = {
+    width: '20rem', // Or '192px' or any other fixed size
+    height: '20rem', // Or '192px' or any other fixed size
+    objectFit: 'cover',
   };
 
   return (
     <ChakraProvider>
       <div className="bg-gradient-to-r from-teal-400 via-purple-400 to-indigo-500 text-white min-h-screen w-full flex items-center justify-center">
-    <div className="absolute w-full h-full max-w-md p-6 space-y-6 bg-black bg-opacity-50 md:rounded-3xl md:shadow-2xl md:max-h-[90vh] overflow-auto">
-      
-        {imageLoadError && (
-            <Box textAlign="center">
-                <p>Loading high-resolution image...</p>
-            </Box>
-        )}
-
-     
-        <div className="flex justify-center">
+        <div className="absolute w-full h-full max-w-md p-6 space-y-6 bg-black bg-opacity-50 md:rounded-3xl md:shadow-2xl md:max-h-[90vh] overflow-auto">
+          <div className="flex justify-center">
             <Avatar
-                src={imageSrc}
-                size="3.5xl"
-                className="w-48 h-48 size-3.5xl border-4 border-white rounded-full overflow-hidden shadow-lg"
-                alt="Profile picture"
-                onError={handleImageError}
+              src={highQualitySrc}
+              size="3.5xl"
+              className="w-48 h-48 size-3.5xl border-4 border-white rounded-full overflow-hidden shadow-lg"
+              alt="Profile picture"
+              style={avatarStyle} // Apply the style object here
             />
-        </div>
+          </div>
+
           <h1 className="text-center text-3xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
             Hi, I'm Eva. Here's links to my social networks:
           </h1>
