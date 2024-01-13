@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 export default function Component() {
   const lowQualitySrc = '/eva.jpeg';
-  const highQualitySrc = '/eva.png';
+  const highQualitySrc = '/eva.jpeg';
   const [imageSrc, setImageSrc] = useState(lowQualitySrc); // Start with low-res image
   const [imageLoadError, setImageLoadError] = useState(false);
 
